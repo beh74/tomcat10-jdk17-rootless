@@ -14,10 +14,10 @@ RUN addgroup -S tomcat && adduser -S tomcat -G tomcat -h /home/tomcat
 USER tomcat
 
 # download tomcat 10
-RUN wget https://dlcdn.apache.org/tomcat/tomcat-10/v10.1.11/bin/apache-tomcat-10.1.11.zip -P /home/tomcat/
-RUN unzip /home/tomcat/apache-tomcat-10.1.11.zip -d /home/tomcat/
-RUN rm /home/tomcat/apache-tomcat-10.1.11.zip
-RUN mv /home/tomcat/apache-tomcat-10.1.11 /home/tomcat/apache-tomcat
+RUN wget https://dlcdn.apache.org/tomcat/tomcat-10/v10.1.12/bin/apache-tomcat-10.1.12.zip -P /home/tomcat/
+RUN unzip /home/tomcat/apache-tomcat-10.1.12.zip -d /home/tomcat/
+RUN rm /home/tomcat/apache-tomcat-10.1.12.zip
+RUN mv /home/tomcat/apache-tomcat-10.1.12 /home/tomcat/apache-tomcat
 
 # remove all default webapps
 RUN rm -rf /home/tomcat/apache-tomcat/webapps/*

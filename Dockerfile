@@ -22,12 +22,10 @@ RUN mv /home/tomcat/apache-tomcat-10.1.16 /home/tomcat/apache-tomcat
 # remove all default webapps
 RUN rm -rf /home/tomcat/apache-tomcat/webapps/*
 
-# todo : remove tomcat version on http errors
-
 RUN chmod +x /home/tomcat/apache-tomcat/bin/*.sh
-RUN export CATALINA_BASE=/home/tomcat/apache-tomcat
-RUN export CATALINA_HOME=/home/tomcat/apache-tomcat
+ENV CATALINA_BASE=/home/tomcat/apache-tomcat
+ENV CATALINA_HOME=/home/tomcat/apache-tomcat
 
 EXPOSE 8080:8080
 
-CMD /home/tomcat/apache-tomcat/bin/catalina.sh run
+CMD ["/home/tomcat/apache-tomcat/bin/catalina.sh", "run"]

@@ -1,4 +1,4 @@
-FROM alpine:3.18.3
+FROM alpine:3.19
 
 LABEL maintainer="hartwig.bertrand@gmail.com"
 LABEL description="Tomcat 10 jdk 17 root less"
@@ -15,10 +15,10 @@ RUN addgroup -S tomcat && adduser -S tomcat -G tomcat -h /home/tomcat
 USER tomcat
 
 # download tomcat 10
-RUN wget https://dlcdn.apache.org/tomcat/tomcat-10/v10.1.18/bin/apache-tomcat-10.1.18.zip -P /home/tomcat/
-RUN unzip /home/tomcat/apache-tomcat-10.1.18.zip -d /home/tomcat/
-RUN rm /home/tomcat/apache-tomcat-10.1.18.zip
-RUN mv /home/tomcat/apache-tomcat-10.1.18 /home/tomcat/apache-tomcat
+RUN wget https://dlcdn.apache.org/tomcat/tomcat-10/v10.1.18/bin/apache-tomcat-10.1.18.zip -P /home/tomcat/ \
+    && unzip /home/tomcat/apache-tomcat-10.1.18.zip -d /home/tomcat/ \
+    && rm /home/tomcat/apache-tomcat-10.1.18.zip \
+    && mv /home/tomcat/apache-tomcat-10.1.18 /home/tomcat/apache-tomcat
 
 # remove all default webapps
 RUN rm -rf /home/tomcat/apache-tomcat/webapps/*

@@ -11,10 +11,10 @@ RUN addgroup -S tomcat && adduser -S tomcat -G tomcat -h /home/tomcat
 USER tomcat
 
 # download tomcat 10
-RUN wget https://dlcdn.apache.org/tomcat/tomcat-10/v10.1.18/bin/apache-tomcat-10.1.18.zip -P /home/tomcat/ \
-    && unzip /home/tomcat/apache-tomcat-10.1.18.zip -d /home/tomcat/ \
-    && rm /home/tomcat/apache-tomcat-10.1.18.zip \
-    && mv /home/tomcat/apache-tomcat-10.1.18 /home/tomcat/apache-tomcat \
+RUN wget https://dlcdn.apache.org/tomcat/tomcat-10/v10.1.19/bin/apache-tomcat-10.1.19.zip -P /home/tomcat/ \
+    && unzip /home/tomcat/apache-tomcat-10.1.19.zip -d /home/tomcat/ \
+    && rm /home/tomcat/apache-tomcat-10.1.19.zip \
+    && mv /home/tomcat/apache-tomcat-10.1.19 /home/tomcat/apache-tomcat \
     && rm -rf /home/tomcat/apache-tomcat/webapps/* \
     && chmod +x /home/tomcat/apache-tomcat/bin/*.sh
 
